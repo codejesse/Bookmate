@@ -55,12 +55,12 @@ const Carousel: React.FC<Iprops> = ({ books }) => {
 
   return (
     <div className="carousel mt-0 my-0 mx-auto">
-      <div className="flex flex-row gap-2 leading-8 font-semibold mb-12 text-slate-700">
+      <div className="flex flex-row gap-4 leading-8 font-semibold mb-12 text-slate-700">
         <h2 className="text-4xl">Recommended</h2>
         <button className="w-10 h-10 bg-white rounded-full mr-3" onClick={movePrev}><ArrowLeft style={{ color: 'blue', margin: '8px' }} /></button>
         <button className="w-10 h-10 bg-white rounded-full mr-3" onClick={moveNext}><ArrowRight style={{ color: 'blue', margin: '8px' }} /></button>
       </div>
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden border-2 gap-7">
         <div
           ref={carousel}
           className="carousel-container relative flex gap-5 w-full h-full overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
@@ -72,7 +72,7 @@ const Carousel: React.FC<Iprops> = ({ books }) => {
                 className="carousel-item text-center relative w-80 h-full snap-start"
               >
                 <div className="w-60 h-[522px] bg-white shadow-lg rounded-2xl">
-                  <div className="h-80 w-full object-fit m-auto rounded-t-2xl">
+                  <div className="h-[346px] w-full object-fit m-auto rounded-t-2xl">
                     <img className="w-full h-full rounded-t-2xl" src={book.img} alt={book.Title} />
                   </div>
                 </div>
@@ -86,3 +86,8 @@ const Carousel: React.FC<Iprops> = ({ books }) => {
 };
 
 export default Carousel;
+
+
+
+// background: url(.jpg), #FFFFFF;
+// border-radius: 15px;

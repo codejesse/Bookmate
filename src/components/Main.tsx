@@ -68,8 +68,14 @@ const Main = () => {
         <div>
             <div className="2xl:mx-auto h-full 2xl:px-0 py-24 px-10">
                 <Searchbar />
-                <div className="w-7/12 h-full 2xl:mx-auto 2xl:px-0 py-2">
-                    <Carousel books={books} />
+                <div className="flex flex-row">
+                    <div className="w-8/12 h-full 2xl:mx-auto 2xl:px-0 py-2">
+                        <Carousel books={books} />
+                    </div>
+                    <div className="flex flex-col m-auto">
+                        <h1>Promotions</h1>
+                        <div className="w-[409px] h-[512px] bg-[url('https://www.wallsauce.com/uploads/wallsauce-com/images/thumbs/248/822e65e410d17c8ae756978e5a46f84b540b6038_800__R_N_90.jpg')] bg-no-repeat bg-cover bg-center rounded-md"></div>
+                    </div>
                 </div>
             </div>
         </div>

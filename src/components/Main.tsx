@@ -65,16 +65,18 @@ const Main = () => {
         },
     ])
     return (
-        <div>
-            <div className="2xl:mx-auto h-full 2xl:px-0 py-24 px-10">
-                <Searchbar />
-                <div className="flex flex-row">
-                    <div className="w-8/12 h-full 2xl:mx-auto 2xl:px-0 py-2">
-                        <Carousel books={books} />
-                    </div>
-                    <div className="flex flex-col m-auto">
-                        <h1>Promotions</h1>
-                        <div className="w-[409px] h-[512px] bg-[url('https://www.wallsauce.com/uploads/wallsauce-com/images/thumbs/248/822e65e410d17c8ae756978e5a46f84b540b6038_800__R_N_90.jpg')] bg-no-repeat bg-cover bg-center rounded-md"></div>
+        <div className="2xl:mx-auto h-full 2xl:px-0 py-24 px-10">
+            <Searchbar />
+            <div className="flex flex-row">
+                <div className="w-7/12 h-full 2xl:mx-auto 2xl:px-0 py-2">
+                    <Carousel books={books} />
+                </div>
+                <div className="flex flex-col ml-[30px]">
+                    <div className="w-full h-full bg-[url('https://www.wallsauce.com/uploads/wallsauce-com/images/thumbs/248/822e65e410d17c8ae756978e5a46f84b540b6038_800__R_N_90.jpg')] bg-no-repeat bg-cover bg-center rounded-xl m-auto">
+                        <div className="flex flex-col">
+                            <h1 className="text-7xl font-semibold text-white mt-32 ml-7">Get a book today</h1>
+                            <button className="w-10/12 h-[65px] bg-amber-300 rounded-full m-auto mt-24 text-white text-2xl font-medium leading-4 ">Start reading now</button>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -5,6 +5,7 @@ import Carousel from './Carousel'
 import Loader from './components/Loader';
 import Main from './components/Main';
 import Navbar from './components/Navbar';
+import Modal from './components/Modal';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);

@@ -1,4 +1,5 @@
 import Logo from "../assets/Nav-logo.png"
+import Modal from "./Modal";
 
 const Navbar = () => {
     return ( 
@@ -10,7 +11,8 @@ const Navbar = () => {
                 <p className="neutral-800 text[15px] not-italic font-medium mt-2.5">Library</p>
                 <p className="neutral-800 text[15px] not-italic font-medium mt-2.5">Saved</p>
                 <div className="flex flex-row justify-center">
-                    <button className="w-32 h-11 border-2 border-green-300 text-green-400 bg-none rounded-3xl">Add book</button>
+                    {/* <button className="w-32 h-11 border-2 border-green-200 text-green-400 bg-none rounded-3xl">Add book</button> */}
+                    <Modal />
                 </div>
             </div>
             <div className="flex justify-center w-32">

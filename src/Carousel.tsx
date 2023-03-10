@@ -56,11 +56,11 @@ const Carousel: React.FC<Iprops> = ({ books }) => {
   return (
     <div className="carousel mt-0 my-0 mx-auto">
       <div className="flex flex-row gap-4 leading-8 font-semibold mb-12 text-slate-700">
-        <h2 className="text-4xl">Recommended</h2>
+        <h2 className="text-2xl">Recommended</h2>
         <button className="w-10 h-10 bg-white rounded-full mr-3" onClick={movePrev}><ArrowLeft style={{ color: 'blue', margin: '8px' }} /></button>
         <button className="w-10 h-10 bg-white rounded-full mr-3" onClick={moveNext}><ArrowRight style={{ color: 'blue', margin: '8px' }} /></button>
       </div>
-      <div className="relative overflow-hidden border-2 gap-7">
+      <div className="relative overflow-hidden gap-7">
         <div
           ref={carousel}
           className="carousel-container relative flex gap-5 w-full h-full overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"

@@ -1,12 +1,15 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useContext } from 'react';
 import Searchbar from './components/Searchbar';
-import { Istate as Iprops } from "./components/Main"
+// import { Istate as Iprops } from "./components/Main"
+import { BookContextType, Ibook } from './@types/types.books';
+import { BookContext } from './context/bookContext';
 
 // Data
 import data from './data.json';
 import { ArrowLeft, ArrowRight } from 'iconsax-react';
 
-const Carousel: React.FC<Iprops> = ({ books }) => {
+const Carousel: React.FC = ({  }) => {
+  const { books } = useContext(BookContext) as BookContextType;
   const maxScrollWidth = useRef(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const carousel = useRef<HTMLDivElement>(null);
@@ -73,8 +76,14 @@ const Carousel: React.FC<Iprops> = ({ books }) => {
               >
                 <div className="w-60 h-[522px] bg-white shadow-lg rounded-2xl">
                   <div className="h-[346px] w-full object-fit m-auto rounded-t-2xl">
-                    <img className="w-full h-full rounded-t-2xl" src={book.img} alt={book.Title} />
+                    <img className="w-full h-full rounded-t-2xl" src={book.img} alt={book.title} />
                   </div>
+                  {/* <h1 className="text-left m-2 text-xl">{book.Title}</h1> */}
+                  <span
+                    className="items-center gap-1 rounded-full bg-green-50 px-2 py-1 text-xs font-semibold text-green-600"
+                  >
+                    {book.category}
+                  </span>
                 </div>
               </div>
             );

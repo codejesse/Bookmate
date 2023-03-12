@@ -26,7 +26,7 @@ const Main = () => {
             Author: "Balablu",
             img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQB-3-cJ6tpQ6cFUjCach0R1dTiXdhXI0AtA&usqp=CAU",
             price: 9.00,
-            category: "Fiction"
+            category: "Action"
         },
         {
             Title: "Another one",
@@ -40,14 +40,14 @@ const Main = () => {
             Author: "Kanye West",
             img: "https://s26162.pcdn.co/wp-content/uploads/2020/01/Sin-Eater-by-Megan-Campisi.jpg",
             price: 9,
-            category: "Fiction"
+            category: "Mystery"
         },
         {
             Title: "Las of us",
             Author: "Kanye West",
             img: "https://s26162.pcdn.co/wp-content/uploads/2020/01/Sin-Eater-by-Megan-Campisi.jpg",
             price: 9,
-            category: "Fiction"
+            category: "Action"
         },
         {
             Title: "Las of u",
@@ -61,7 +61,7 @@ const Main = () => {
             Author: "Kanye West",
             img: "https://s26162.pcdn.co/wp-content/uploads/2020/01/Sin-Eater-by-Megan-Campisi.jpg",
             price: 9,
-            category: "Fiction"
+            category: "Biography"
         },
     ])
     return (

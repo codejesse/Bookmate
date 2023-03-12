@@ -6,6 +6,8 @@ import Loader from './components/Loader';
 import Main from './components/Main';
 import Navbar from './components/Navbar';
 import Modal from './components/Modal';
+import Inventory from './components/Inventory';
+import BookProvider from './context/bookContext';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -19,8 +21,11 @@ function App() {
   return isLoading ?
     <Loader /> :
     <div>
-      <Navbar />
-      <Main />
+      <BookProvider>
+        <Navbar />
+        <Main />
+        <Inventory />
+      </BookProvider>
     </div>
 }
 

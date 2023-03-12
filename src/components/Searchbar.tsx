@@ -1,7 +1,7 @@
 const Searchbar = () => {
     return (
-        <div className="flex flex-grow justify-between w-full">
-            <div className="flex justify-center w-8/12 ">
+        <div className="flex flex-col md:flex-col lg:flex-row sm:flex-col justify-between w-full">
+            <div className="flex justify-center w-8/12">
                 <div className="mb-3 w-full xl:w-full">
                     <div className="relative mb-4 flex w-full flex-wrap items-stretch">
                         <input

@@ -1,8 +1,32 @@
 import { Dialog, Transition } from '@headlessui/react'
-import { Fragment, useState } from 'react'
+import { Fragment, useState, useContext } from 'react'
+import { BookContext } from '../context/bookContext'
+import { BookContextType, Ibook } from '../@types/types.books'
 
-export default function Modal() {
-    let [isOpen, setIsOpen] = useState(true)
+
+const Modal: React.FC = () => {
+    let [isOpen, setIsOpen] = useState(false)
+    const { saveBook } = useContext(BookContext) as BookContextType;
+    const [formData, setFormData] = useState<Ibook | []>({
+        title: "",
+        author: "",
+        img: "",
+        category: "",
+        description: "",
+        price: 0.00,
+        status: false
+    });
+    const handleForm = (e: React.FormEvent<HTMLInputElement>): void => {
+        setFormData({
+            ...formData,
+            [e.currentTarget.id]: e.currentTarget.value,
+        });
+    };
+
+    const handleSaveBook = (e: React.FormEvent, formData: Ibook | any) => {
+        e.preventDefault();
+        saveBook(formData);
+    }
 
     function closeModal() {
         setIsOpen(false)
@@ -11,6 +35,8 @@ export default function Modal() {
     function openModal() {
         setIsOpen(true)
     }
+
+    console.log(formData)
 
     return (
         <>
@@ -54,14 +80,15 @@ export default function Modal() {
                                         as="h3"
                                         className="text-4xl font-medium leading-6 text-gray-900"
                                     >
-                                        Add new book 🎉
+                                        Add new book 📚
                                     </Dialog.Title>
-                                    <div className="mt-2">
-                                        <div className="mt-4">
+                                    <form className="mt-2" onSubmit={(e) => handleSaveBook(e, formData)}>
+                                        <div className="mt-12">
                                             <div className="mb-3 w-full xl:w-full">
                                                 <div className="relative mb-4 flex w-full flex-wrap items-stretch">
                                                     <input
-                                                        type="search"
+                                                        type="text"
+                                                        onChange={handleForm}
                                                         className="h-12 relative m-0 block w-full min-w-0 flex-auto rounded-full border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
                                                         placeholder="Book name"
                                                         aria-label="Search"
@@ -71,7 +98,8 @@ export default function Modal() {
                                             <div className="mb-3 w-full xl:w-full">
                                                 <div className="relative mb-4 flex w-full flex-wrap items-stretch">
                                                     <input
-                                                        type="search"
+                                                        type="text"
+                                                        onChange={handleForm}
                                                         className="h-12 relative m-0 block w-full min-w-0 flex-auto rounded-full border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
                                                         placeholder="Author's name"
                                                         aria-label="Search"
@@ -81,7 +109,8 @@ export default function Modal() {
                                             <div className="mb-3 w-full xl:w-full">
                                                 <div className="relative mb-4 flex w-full flex-wrap items-stretch">
                                                     <input
-                                                        type="search"
+                                                        type="text"
+                                                        onChange={handleForm}
                                                         className="h-12 relative m-0 block w-full min-w-0 flex-auto rounded-full border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
                                                         placeholder="Price"
                                                         aria-label="Search"
@@ -91,7 +120,8 @@ export default function Modal() {
                                             <div className="mb-3 w-full xl:w-full">
                                                 <div className="relative mb-4 flex w-full flex-wrap items-stretch">
                                                     <input
-                                                        type="search"
+                                                        type="text"
+                                                        onChange={handleForm}
                                                         className="h-12 relative m-0 block w-full min-w-0 flex-auto rounded-full border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
                                                         placeholder="Description"
                                                         aria-label="Search"
@@ -99,24 +129,25 @@ export default function Modal() {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                        <div className="mt-4">
+                                            <button
+                                                type="button"
+                                                className="mr-4 justify-center w-32 h-11 border-2 border-red-300 text-red-400 bg-none rounded-3xl"
+                                                onClick={closeModal}
+                                            >
+                                                Cancel
+                                            </button>
+                                            <button
+                                                type="button"
+                                                className="justify-center bg-amber-100 w-32 h-11 text-amber-400 bg-none rounded-3xl"
+                                                // onClick={closeModal}
+                                                disabled={formData === undefined ? true : false}
+                                            >
+                                                Submit
+                                            </button>
+                                        </div>
+                                    </form>
 
-                                    <div className="mt-4">
-                                        <button
-                                            type="button"
-                                            className="mr-4 justify-center w-32 h-11 border-2 border-red-200 text-red-400 bg-none rounded-3xl"
-                                            onClick={closeModal}
-                                        >
-                                            Cancel
-                                        </button>
-                                        <button
-                                            type="button"
-                                            className="justify-center bg-amber-100 w-32 h-11 text-amber-400 bg-none rounded-3xl"
-                                            onClick={closeModal}
-                                        >
-                                            Submit
-                                        </button>
-                                    </div>
                                 </Dialog.Panel>
                             </Transition.Child>
                         </div>
@@ -126,3 +157,4 @@ export default function Modal() {
         </>
     )
 }
+export default Modal;

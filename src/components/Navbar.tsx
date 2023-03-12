@@ -18,7 +18,7 @@ const Navbar = () => {
             <div className="flex justify-center w-32">
                 <div className="flex flex-row m-3 mt-5 text[15px] not-italic font-medium mt-1.5">
                     <p>👨🏿‍💻</p>
-                    <p className="font-medium">Guest</p>
+                    <p className="font-medium font-thin">Sign in</p>
                 </div>
             </div>
         </div>

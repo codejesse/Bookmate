@@ -60,6 +60,7 @@ const Carousel: React.FC = ({  }) => {
     <div className="carousel mt-0 my-0 mx-auto">
       <div className="flex flex-row gap-4 leading-8 font-semibold mb-12 text-slate-700">
         <h2 className="text-2xl">Recommended</h2>
+        <h2 className="text-xl text-slate-300">Recently read</h2>
         <button className="w-10 h-10 bg-white rounded-full mr-3" onClick={movePrev}><ArrowLeft style={{ color: 'blue', margin: '8px' }} /></button>
         <button className="w-10 h-10 bg-white rounded-full mr-3" onClick={moveNext}><ArrowRight style={{ color: 'blue', margin: '8px' }} /></button>
       </div>
@@ -78,12 +79,13 @@ const Carousel: React.FC = ({  }) => {
                   <div className="h-[346px] w-full object-fit m-auto rounded-t-2xl">
                     <img className="w-full h-full rounded-t-2xl" src={book.img} alt={book.title} />
                   </div>
-                  {/* <h1 className="text-left m-2 text-xl">{book.Title}</h1> */}
                   <span
-                    className="items-center gap-1 rounded-full bg-green-50 px-2 py-1 text-xs font-semibold text-green-600"
+                    className="items-left gap-1 rounded-sm bg-green-50 px-2 py-1 text-xs font-semibold text-green-600 w-[78px] h-[26px]"
                   >
                     {book.category}
                   </span>
+                  <p className="text-left m-5 text-sm text-neutral-400">{book.description}</p>
+                  <p className="text-left m-5 text-sm text-slate-900">{book.author}</p>
                 </div>
               </div>
             );
@@ -95,8 +97,6 @@ const Carousel: React.FC = ({  }) => {
 };
 
 export default Carousel;
+// width: 78px;
+// height: 26px;
 
-
-
-// background: url(.jpg), #FFFFFF;
-// border-radius: 15px;

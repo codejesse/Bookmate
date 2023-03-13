@@ -7,15 +7,16 @@ import { BookContextType, Ibook } from '../@types/types.books'
 const Modal: React.FC = () => {
     let [isOpen, setIsOpen] = useState(false)
     const { saveBook } = useContext(BookContext) as BookContextType;
-    const [formData, setFormData] = useState<Ibook | []>({
-        title: "",
-        author: "",
-        img: "",
-        category: "",
-        description: "",
-        price: 0.00,
-        status: false
-    });
+    // const [formData, setFormData] = useState<Ibook | []>({
+    //     title: "",
+    //     author: "",
+    //     img: "",
+    //     category: "",
+    //     description: "",
+    //     price: 0.00,
+    //     status: false
+    // });
+    const [formData, setFormData] = useState<Ibook | {}>()
     const handleForm = (e: React.FormEvent<HTMLInputElement>): void => {
         setFormData({
             ...formData,
@@ -23,9 +24,9 @@ const Modal: React.FC = () => {
         });
     };
 
-    const handleSaveBook = (e: React.FormEvent, formData: Ibook | any) => {
+    const handleSaveBook = (e: React.FormEvent, formData : Ibook | any) => {
         e.preventDefault();
-        saveBook(formData);
+        saveBook(formData); //issue lies here.
     }
 
     function closeModal() {
@@ -88,6 +89,7 @@ const Modal: React.FC = () => {
                                                 <div className="relative mb-4 flex w-full flex-wrap items-stretch">
                                                     <input
                                                         type="text"
+                                                        id="title"
                                                         onChange={handleForm}
                                                         className="h-12 relative m-0 block w-full min-w-0 flex-auto rounded-full border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
                                                         placeholder="Book name"
@@ -99,6 +101,7 @@ const Modal: React.FC = () => {
                                                 <div className="relative mb-4 flex w-full flex-wrap items-stretch">
                                                     <input
                                                         type="text"
+                                                        id="author"
                                                         onChange={handleForm}
                                                         className="h-12 relative m-0 block w-full min-w-0 flex-auto rounded-full border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
                                                         placeholder="Author's name"
@@ -110,6 +113,7 @@ const Modal: React.FC = () => {
                                                 <div className="relative mb-4 flex w-full flex-wrap items-stretch">
                                                     <input
                                                         type="text"
+                                                        id="price"
                                                         onChange={handleForm}
                                                         className="h-12 relative m-0 block w-full min-w-0 flex-auto rounded-full border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
                                                         placeholder="Price"
@@ -121,6 +125,7 @@ const Modal: React.FC = () => {
                                                 <div className="relative mb-4 flex w-full flex-wrap items-stretch">
                                                     <input
                                                         type="text"
+                                                        id="description"
                                                         onChange={handleForm}
                                                         className="h-12 relative m-0 block w-full min-w-0 flex-auto rounded-full border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
                                                         placeholder="Description"

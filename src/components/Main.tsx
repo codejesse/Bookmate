@@ -69,7 +69,7 @@ const Main = () => {
             <Searchbar />
             <div className="flex flex-row">
                 <div className="w-7/12 h-full 2xl:mx-auto 2xl:px-0 py-2">
-                    <Carousel books={books} />
+                    <Carousel />
                 </div>
                 <div className="flex flex-col ml-[30px]">
                     <div className="w-full h-full bg-[url('https://www.wallsauce.com/uploads/wallsauce-com/images/thumbs/248/822e65e410d17c8ae756978e5a46f84b540b6038_800__R_N_90.jpg')] bg-no-repeat bg-cover bg-center rounded-xl m-auto">

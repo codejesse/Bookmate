@@ -3,7 +3,6 @@ import { Fragment, useState, useContext } from 'react'
 import { BookContext } from '../context/bookContext'
 import { BookContextType, Ibook } from '../@types/types.books'
 
-
 const Modal: React.FC = () => {
     let [isOpen, setIsOpen] = useState(false)
     const { saveBook } = useContext(BookContext) as BookContextType;
@@ -32,6 +31,7 @@ const Modal: React.FC = () => {
     const handleSaveBook = (formData : Ibook | any) => {
         saveBook(formData);
         setFormData({})
+        setIsOpen(false)
     }
 
     function closeModal() {

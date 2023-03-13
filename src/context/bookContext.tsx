@@ -85,7 +85,7 @@ const BookProvider: React.FC<Props> = ({ children }) => {
             id: Math.random(),
             title: book.title,
             author: book.author,
-            img: book.author,
+            img: book.img,
             description: book.description,
             price: book.price,
             category: book.category,

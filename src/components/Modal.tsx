@@ -24,9 +24,14 @@ const Modal: React.FC = () => {
         });
     };
 
-    const handleSaveBook = (e: React.FormEvent, formData : Ibook | any) => {
-        e.preventDefault();
-        saveBook(formData); //issue lies here.
+    // const handleSaveBook = (e: React.FormEvent, formData : Ibook | any) => {
+    //     e.preventDefault();
+    //     saveBook(formData);
+    //     setFormData({})
+    // }
+    const handleSaveBook = (formData : Ibook | any) => {
+        saveBook(formData);
+        setFormData({})
     }
 
     function closeModal() {
@@ -83,7 +88,7 @@ const Modal: React.FC = () => {
                                     >
                                         Add new book 📚
                                     </Dialog.Title>
-                                    <form className="mt-2" onSubmit={(e) => handleSaveBook(e, formData)}>
+                                    <form className="mt-2 Form">
                                         <div className="mt-12">
                                             <div className="mb-3 w-full xl:w-full">
                                                 <div className="relative mb-4 flex w-full flex-wrap items-stretch">
@@ -93,6 +98,18 @@ const Modal: React.FC = () => {
                                                         onChange={handleForm}
                                                         className="h-12 relative m-0 block w-full min-w-0 flex-auto rounded-full border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
                                                         placeholder="Book name"
+                                                        aria-label="Search"
+                                                        aria-describedby="button-addon2" />
+                                                </div>
+                                            </div>
+                                            <div className="mb-3 w-full xl:w-full">
+                                                <div className="relative mb-4 flex w-full flex-wrap items-stretch">
+                                                    <input
+                                                        type="text"
+                                                        id="img"
+                                                        onChange={handleForm}
+                                                        className="h-12 relative m-0 block w-full min-w-0 flex-auto rounded-full border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
+                                                        placeholder="Book image"
                                                         aria-label="Search"
                                                         aria-describedby="button-addon2" />
                                                 </div>
@@ -134,7 +151,7 @@ const Modal: React.FC = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="mt-4">
+                                        {/* <div className="mt-4"> */}
                                             <button
                                                 type="button"
                                                 className="mr-4 justify-center w-32 h-11 border-2 border-red-300 text-red-400 bg-none rounded-3xl"
@@ -145,12 +162,12 @@ const Modal: React.FC = () => {
                                             <button
                                                 type="button"
                                                 className="justify-center bg-amber-100 w-32 h-11 text-amber-400 bg-none rounded-3xl"
-                                                // onClick={closeModal}
                                                 disabled={formData === undefined ? true : false}
+                                                onClick={() => handleSaveBook(formData)}
                                             >
                                                 Submit
-                                            </button>
-                                        </div>
+                                            </button>   
+                                        {/* </div> */}
                                     </form>
 
                                 </Dialog.Panel>

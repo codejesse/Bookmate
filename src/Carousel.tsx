@@ -6,7 +6,7 @@ import { BookContext } from './context/bookContext';
 
 // Data
 import data from './data.json';
-import { ArrowLeft, ArrowRight } from 'iconsax-react';
+import { ArrowLeft, ArrowLeft2, ArrowRight, ArrowRight2 } from 'iconsax-react';
 
 const Carousel: React.FC = ({  }) => {
   const { books } = useContext(BookContext) as BookContextType;
@@ -61,8 +61,8 @@ const Carousel: React.FC = ({  }) => {
       <div className="flex flex-row gap-4 leading-8 font-semibold mb-12 text-slate-700">
         <h2 className="text-2xl">Recommended</h2>
         <h2 className="text-xl text-slate-300">Recently read</h2>
-        <button className="w-10 h-10 bg-white rounded-full mr-3" onClick={movePrev}><ArrowLeft style={{ color: 'blue', margin: '8px' }} /></button>
-        <button className="w-10 h-10 bg-white rounded-full mr-3" onClick={moveNext}><ArrowRight style={{ color: 'blue', margin: '8px' }} /></button>
+        <button className="w-10 h-10 bg-white rounded-full mr-3" onClick={movePrev}><ArrowLeft2 style={{ color: 'blue', margin: '8px' }} /></button>
+        <button className="w-10 h-10 bg-white rounded-full mr-3" onClick={moveNext}><ArrowRight2 style={{ color: 'blue', margin: '8px' }} /></button>
       </div>
       <div className="relative overflow-hidden gap-7">
         <div

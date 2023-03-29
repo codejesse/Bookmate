@@ -73,7 +73,7 @@ const Main = () => {
                 </div>
                 <div className="flex flex-col ml-[30px]">
                     <div className="w-full h-full bg-[url('https://www.wallsauce.com/uploads/wallsauce-com/images/thumbs/248/822e65e410d17c8ae756978e5a46f84b540b6038_800__R_N_90.jpg')] bg-no-repeat bg-cover bg-center rounded-xl m-auto">
-                        <div className="flex flex-col">
+                        <div className="hidden xl:flex flex flex-col">
                             <h1 className="text-7xl font-semibold text-white mt-32 ml-7">Get a book today</h1>
                             <button className="w-10/12 h-[65px] bg-amber-300 rounded-full m-auto mt-24 text-white text-2xl font-medium leading-4 ">Start reading now</button>
                         </div>

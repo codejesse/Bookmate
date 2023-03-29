@@ -6,15 +6,6 @@ import { BookContextType, Ibook } from '../@types/types.books'
 const Modal: React.FC = () => {
     let [isOpen, setIsOpen] = useState(false)
     const { saveBook } = useContext(BookContext) as BookContextType;
-    // const [formData, setFormData] = useState<Ibook | []>({
-    //     title: "",
-    //     author: "",
-    //     img: "",
-    //     category: "",
-    //     description: "",
-    //     price: 0.00,
-    //     status: false
-    // });
     const [formData, setFormData] = useState<Ibook | {}>()
     const handleForm = (e: React.FormEvent<HTMLInputElement>): void => {
         setFormData({

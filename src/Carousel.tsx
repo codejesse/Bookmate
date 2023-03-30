@@ -67,7 +67,7 @@ const Carousel: React.FC = ({  }) => {
       <div className="relative overflow-hidden gap-7">
         <div
           ref={carousel}
-          className="carousel-container relative flex gap-5 w-full h-full overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
+          className="carousel-container relative flex gap-5 w-full xl:w-full sm:w-[500px] h-full overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
         >
           {books.map((book, index) => {
             return (
